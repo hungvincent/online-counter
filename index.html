@@ -4,9 +4,1082 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>線上祈福</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./public/css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="./public/css/style.css">
 </head>
 <body>
+    <header class="header header_whiteBg header_small">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a href="./index.html" class="header_logo"><img src="./public/img/logo_color.png" alt=""></a>
+            <div class="d-flex align-items-center">
+                <nav class="header_nav">
+                    <ul class="d-flex align-items-center">
+                        <li><a class="active" href="">線上櫃檯</a></li>
+                        <li><a href="">線上祈福</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main main-counter">
+        <img class="w-100 d-sm-block d-none" src="./public/img/counter_bg.png" alt="">
+        <img class="w-100 d-sm-none" src="./public/img/counter-bg-m.png" alt="">
+        <div class="counter_link">
+            <button class="counter_btn" data-bs-toggle="modal" data-bs-target="#productModal"><img src="./public/img/btn-buy.png" alt=""></button>
+            <button class="counter_btn"><img src="./public/img/btn-signin.png" alt=""></button>
+            <button class="counter_btn"><img src="./public/img/btn-donate.png" alt=""></button>
+        </div>
+        <button class="counter_memberBtn notlogin" data-bs-toggle="modal" data-bs-target="#loginModal">
+            <img src="./public/img/btn-login.png" alt="">
+        </button>
+    </main>
+
+    <div class="modal fade counter_modal" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="loginModalLabel">登入會員</h5>
+              <button class="modal-close" data-bs-dismiss="modal" aria-label="Close">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 1L1 13" stroke="#B9B9B9" stroke-linecap="square" stroke-linejoin="round"/>
+                    <path d="M1 1L13 13" stroke="#B9B9B9" stroke-linecap="square" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form action="" class="counter_login">
+                    <div class="counter_input">
+                        <label for="">帳號</label>
+                        <input type="text">
+                    </div>
+                    <div class="counter_input">
+                        <label for="">密碼</label>
+                        <input type="password">
+                    </div>
+                    <div class="counter_login_btn">
+                        <button class="modal-btn" data-bs-dismiss="modal">登入</button>
+                        <ul>
+                            <li data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#signinModal">註冊</li>
+                            <li data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#forgetModal">忘記密碼</li>
+                        </ul>
+                    </div>
+                    <div class="counter_login_fast">
+                        <div class="counter_login_fast_title">
+                            <div class="line"></div>
+                            <h6>快速登入</h6>
+                        </div>
+                        <div class="counter_login_fast_btn">
+                            <button class="btn_fb">
+                                <svg width="13" height="25" viewBox="0 0 13 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.42696 25V13.5972H12.2529L12.8269 9.15195H8.42696V6.31434C8.42696 5.02775 8.78277 4.15095 10.6298 4.15095L12.9817 4.14999V0.174037C12.575 0.121182 11.1788 0 9.55385 0C6.1606 0 3.83753 2.07121 3.83753 5.87409V9.15195H0V13.5972H3.83753V25H8.42696Z" fill="#1977F2"/>
+                                </svg>
+                            </button>
+                            <button class="btn_google">
+                                <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 12.5C0 5.6075 5.6075 0 12.5 0C15.2837 0 17.9185 0.895595 20.1195 2.59L17.2148 6.36333C15.8538 5.31571 14.2235 4.7619 12.5 4.7619C8.23321 4.7619 4.7619 8.23321 4.7619 12.5C4.7619 16.7668 8.23321 20.2381 12.5 20.2381C15.9365 20.2381 18.8569 17.9865 19.8633 14.881H12.5V10.119H25V12.5C25 19.3925 19.3925 25 12.5 25C5.6075 25 0 19.3925 0 12.5Z" fill="#D24037"/>
+                                </svg>
+                            </button>
+                            <button class="btn_line">
+                                <svg width="27" height="25" viewBox="0 0 27 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.0438 0C5.85341 0 0 4.78055 0 10.6557C0 15.9178 4.64142 20.3266 10.9079 21.1647C11.3329 21.2549 11.9112 21.4473 12.0579 21.8103C12.1883 22.1397 12.1438 22.6484 12.0992 22.9919L11.9209 24.1071C11.872 24.4365 11.6601 25.4039 13.0612 24.8126C14.4645 24.2234 20.5788 20.3516 23.318 17.183C25.1919 15.1178 26.0876 13.0014 26.0876 10.6557C26.0876 4.78055 20.2342 0 13.0438 0ZM7.93824 14.1493H5.3447C4.96969 14.1493 4.6599 13.8373 4.6599 13.4612V8.2426C4.6599 7.86541 4.96969 7.55345 5.3447 7.55345C5.72297 7.55345 6.0295 7.86541 6.0295 8.2426V12.7721H7.93824C8.31651 12.7721 8.62195 13.0818 8.62195 13.4612C8.62195 13.8373 8.31542 14.1493 7.93824 14.1493ZM10.6187 13.4612C10.6187 13.8373 10.3122 14.1493 9.93285 14.1493C9.55784 14.1493 9.25132 13.8373 9.25132 13.4612V8.2426C9.25132 7.86541 9.55784 7.55345 9.93611 7.55345C10.3122 7.55345 10.6187 7.86541 10.6187 8.2426V13.4612ZM16.8591 13.4612C16.8591 13.7569 16.67 14.0188 16.3895 14.1134C16.32 14.1362 16.245 14.1471 16.1732 14.1471C15.9439 14.1471 15.7482 14.0482 15.6189 13.8732L12.9634 10.2448V13.4601C12.9634 13.8362 12.6601 14.1482 12.2775 14.1482C11.9014 14.1482 11.597 13.8362 11.597 13.4601V8.2426C11.597 7.94694 11.7851 7.68497 12.0644 7.59149C12.1296 7.56649 12.2123 7.55562 12.2753 7.55562C12.4873 7.55562 12.6829 7.66975 12.8134 7.83389L15.4895 11.4764V8.2426C15.4895 7.86541 15.796 7.55345 16.1743 7.55345C16.5493 7.55345 16.8591 7.86541 16.8591 8.2426V13.4612ZM21.0494 10.1622C21.4288 10.1622 21.7342 10.4742 21.7342 10.8524C21.7342 11.2296 21.4288 11.5416 21.0494 11.5416H19.1418V12.7721H21.0494C21.4288 12.7721 21.7342 13.0818 21.7342 13.4612C21.7342 13.8373 21.4288 14.1493 21.0494 14.1493H18.4559C18.0809 14.1493 17.7744 13.8373 17.7744 13.4612V8.2426C17.7744 7.86541 18.0809 7.55345 18.4592 7.55345H21.0527C21.4288 7.55345 21.7342 7.86541 21.7342 8.2426C21.7342 8.62413 21.4288 8.93174 21.0494 8.93174H19.1418V10.1622H21.0494Z" fill="#4CAF50"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade counter_modal" id="signinModal" tabindex="-1" aria-labelledby="signinModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="signinModalLabel">登入註冊</h5>
+              <button class="modal-close" data-bs-dismiss="modal" aria-label="Close">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 1L1 13" stroke="#B9B9B9" stroke-linecap="square" stroke-linejoin="round"/>
+                    <path d="M1 1L13 13" stroke="#B9B9B9" stroke-linecap="square" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form action="" class="counter_login">
+                    <div class="counter_input">
+                        <label for="">帳號</label>
+                        <input type="text">
+                    </div>
+                    <div class="counter_input">
+                        <label for="">密碼</label>
+                        <input type="password">
+                    </div>
+                    <div class="counter_login_btn">
+                        <button class="modal-btn" data-bs-dismiss="modal">註冊</button>
+                        <ul>
+                            <li data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#loginModal">登入</li>
+                            <li data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#forgetModal">忘記密碼</li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade counter_modal" id="forgetModal" tabindex="-1" aria-labelledby="forgetModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="forgetModalLabel">忘記密碼</h5>
+              <button class="modal-close" data-bs-dismiss="modal" aria-label="Close">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 1L1 13" stroke="#B9B9B9" stroke-linecap="square" stroke-linejoin="round"/>
+                    <path d="M1 1L13 13" stroke="#B9B9B9" stroke-linecap="square" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form action="" class="counter_login">
+                    <div class="counter_input">
+                        <label for="">信箱</label>
+                        <input type="email">
+                    </div>
+                    <div class="counter_login_btn">
+                        <button class="modal-btn" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#sendModal">送出</button>
+                        <ul>
+                            <li data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#loginModal">登入</li>
+                            <li data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#singinModal">註冊</li>
+                        </ul>
+                    </div>
+                </form>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade counter_modal" id="sendModal" tabindex="-1" aria-labelledby="sendModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header modal-header-send">
+              <h5 class="modal-title" id="sendModalLabel">寄送成功</h5>
+              <button class="modal-close" data-bs-dismiss="modal" aria-label="Close">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 1L1 13" stroke="#B9B9B9" stroke-linecap="square" stroke-linejoin="round"/>
+                    <path d="M1 1L13 13" stroke="#B9B9B9" stroke-linecap="square" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <div class="modal-body">
+                <img src="./public/img/icon_send.svg" alt="">
+                <button class="modal-btn" data-bs-dismiss="modal">確定</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade counter_modal" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header modal-header-product">
+              <h5 class="modal-title" id="productModalLabel">商品總覽</h5>
+              <button class="modal-close" data-bs-dismiss="modal" aria-label="Close">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 1L1 13" stroke="#B9B9B9" stroke-linecap="square" stroke-linejoin="round"/>
+                    <path d="M1 1L13 13" stroke="#B9B9B9" stroke-linecap="square" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <div class="modal-body">
+                <ul class="nav nav-tabs counter_tab" id="productTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="name1-tab" data-bs-toggle="tab" data-bs-target="#name1" type="button" role="tab" aria-controls="name1" aria-selected="true">姓名1</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="name2-tab" data-bs-toggle="tab" data-bs-target="#name2" type="button" role="tab" aria-controls="name2" aria-selected="false">姓名2</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="name3-tab" data-bs-toggle="tab" data-bs-target="#name3" type="button" role="tab" aria-controls="name3" aria-selected="false">姓名3</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="name4-tab" data-bs-toggle="tab" data-bs-target="#name4" type="button" role="tab" aria-controls="name4" aria-selected="false">姓名4</button>
+                    </li>
+                </ul>
+                <div class="tab-content counter_tab-content counter_product">
+                    <div class="tab-pane active" id="name1" role="tabpanel" aria-labelledby="name1-tab">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="counter_product_item">
+                                    <div class="counter_product_pic">
+                                        <img src="./public/img/product.png" alt="">
+                                    </div>
+                                    <div class="counter_product_text-m">
+                                        <p class="product_name">平安燈1-1</p>
+                                    </div>
+                                    <div class="counter_product_text">
+                                        <p class="product_name pn">平安燈1-1</p>
+                                        <div class="d-flex align-items-center justify-content-lg-start justify-content-md-end justify-content-start">
+                                            <div class="product_price">
+                                                <span>$</span>
+                                                <input class="product_price_input" type="number">
+                                            </div>
+                                            <div class="product_num">
+                                                <div class="product_num_btn minus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                                <input class="product_num_input" type="number" value="0">
+                                                <div class="product_num_btn plus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                        <path d="M4.40002 8L4.40002 -4.17233e-07" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="counter_product_item">
+                                    <div class="counter_product_pic">
+                                        <img src="./public/img/product.png" alt="">
+                                    </div>
+                                    <div class="counter_product_text-m">
+                                        <p class="product_name">平安燈1-2</p>
+                                    </div>
+                                    <div class="counter_product_text">
+                                        <p class="product_name pn">平安燈1-2</p>
+                                        <div class="d-flex align-items-center justify-content-lg-start justify-content-md-end justify-content-start">
+                                            <div class="product_price">
+                                                <span>$</span>
+                                                <input class="product_price_input" type="number">
+                                            </div>
+                                            <div class="product_num">
+                                                <div class="product_num_btn minus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                                <input class="product_num_input" type="number" value="0">
+                                                <div class="product_num_btn plus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                        <path d="M4.40002 8L4.40002 -4.17233e-07" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="counter_product_item">
+                                    <div class="counter_product_pic">
+                                        <img src="./public/img/product.png" alt="">
+                                    </div>
+                                    <div class="counter_product_text-m">
+                                        <p class="product_name">平安燈1-3</p>
+                                    </div>
+                                    <div class="counter_product_text">
+                                        <p class="product_name pn">平安燈1-3</p>
+                                        <div class="d-flex align-items-center justify-content-lg-start justify-content-md-end justify-content-start">
+                                            <div class="product_price">
+                                                <span>$</span>
+                                                <input class="product_price_input" type="number">
+                                            </div>
+                                            <div class="product_num">
+                                                <div class="product_num_btn minus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                                <input class="product_num_input" type="number" value="0">
+                                                <div class="product_num_btn plus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                        <path d="M4.40002 8L4.40002 -4.17233e-07" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="counter_product_item">
+                                    <div class="counter_product_pic">
+                                        <img src="./public/img/product.png" alt="">
+                                    </div>
+                                    <div class="counter_product_text-m">
+                                        <p class="product_name">平安燈1-4</p>
+                                    </div>
+                                    <div class="counter_product_text">
+                                        <p class="product_name pn">平安燈1-4</p>
+                                        <div class="d-flex align-items-center justify-content-lg-start justify-content-md-end justify-content-start">
+                                            <div class="product_price">
+                                                <span>$</span>
+                                                <input class="product_price_input" type="number">
+                                            </div>
+                                            <div class="product_num">
+                                                <div class="product_num_btn minus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                                <input class="product_num_input" type="number" value="0">
+                                                <div class="product_num_btn plus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                        <path d="M4.40002 8L4.40002 -4.17233e-07" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="counter_product_item">
+                                    <div class="counter_product_pic">
+                                        <img src="./public/img/product.png" alt="">
+                                    </div>
+                                    <div class="counter_product_text-m">
+                                        <p class="product_name">平安燈1-5</p>
+                                    </div>
+                                    <div class="counter_product_text">
+                                        <p class="product_name pn">平安燈1-5</p>
+                                        <div class="d-flex align-items-center justify-content-lg-start justify-content-md-end justify-content-start">
+                                            <div class="product_price">
+                                                <span>$</span>
+                                                <input class="product_price_input" type="number">
+                                            </div>
+                                            <div class="product_num">
+                                                <div class="product_num_btn minus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                                <input class="product_num_input" type="number" value="0">
+                                                <div class="product_num_btn plus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                        <path d="M4.40002 8L4.40002 -4.17233e-07" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="counter_product_item">
+                                    <div class="counter_product_pic">
+                                        <img src="./public/img/product.png" alt="">
+                                    </div>
+                                    <div class="counter_product_text-m">
+                                        <p class="product_name">平安燈1-6</p>
+                                    </div>
+                                    <div class="counter_product_text">
+                                        <p class="product_name pn">平安燈1-6</p>
+                                        <div class="d-flex align-items-center justify-content-lg-start justify-content-md-end justify-content-start">
+                                            <div class="product_price">
+                                                <span>$</span>
+                                                <input class="product_price_input" type="number">
+                                            </div>
+                                            <div class="product_num">
+                                                <div class="product_num_btn minus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                                <input class="product_num_input" type="number" value="0">
+                                                <div class="product_num_btn plus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                        <path d="M4.40002 8L4.40002 -4.17233e-07" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="name2" role="tabpanel" aria-labelledby="name2-tab">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="counter_product_item">
+                                    <div class="counter_product_pic">
+                                        <img src="./public/img/product.png" alt="">
+                                    </div>
+                                    <div class="counter_product_text-m">
+                                        <p class="product_name">平安燈2-1</p>
+                                    </div>
+                                    <div class="counter_product_text">
+                                        <p class="product_name pn">平安燈2-1</p>
+                                        <div class="d-flex align-items-center justify-content-lg-start justify-content-md-end justify-content-start">
+                                            <div class="product_price">
+                                                <span>$</span>
+                                                <input class="product_price_input" type="number">
+                                            </div>
+                                            <div class="product_num">
+                                                <div class="product_num_btn minus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                                <input class="product_num_input" type="number" value="0">
+                                                <div class="product_num_btn plus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                        <path d="M4.40002 8L4.40002 -4.17233e-07" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="counter_product_item">
+                                    <div class="counter_product_pic">
+                                        <img src="./public/img/product.png" alt="">
+                                    </div>
+                                    <div class="counter_product_text-m">
+                                        <p class="product_name">平安燈2-2</p>
+                                    </div>
+                                    <div class="counter_product_text">
+                                        <p class="product_name pn">平安燈2-2</p>
+                                        <div class="d-flex align-items-center justify-content-lg-start justify-content-md-end justify-content-start">
+                                            <div class="product_price">
+                                                <span>$</span>
+                                                <input class="product_price_input" type="number">
+                                            </div>
+                                            <div class="product_num">
+                                                <div class="product_num_btn minus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                                <input class="product_num_input" type="number" value="0">
+                                                <div class="product_num_btn plus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                        <path d="M4.40002 8L4.40002 -4.17233e-07" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="counter_product_item">
+                                    <div class="counter_product_pic">
+                                        <img src="./public/img/product.png" alt="">
+                                    </div>
+                                    <div class="counter_product_text-m">
+                                        <p class="product_name">平安燈2-3</p>
+                                    </div>
+                                    <div class="counter_product_text">
+                                        <p class="product_name pn">平安燈2-3</p>
+                                        <div class="d-flex align-items-center justify-content-lg-start justify-content-md-end justify-content-start">
+                                            <div class="product_price">
+                                                <span>$</span>
+                                                <input class="product_price_input" type="number">
+                                            </div>
+                                            <div class="product_num">
+                                                <div class="product_num_btn minus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                                <input class="product_num_input" type="number" value="0">
+                                                <div class="product_num_btn plus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                        <path d="M4.40002 8L4.40002 -4.17233e-07" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="counter_product_item">
+                                    <div class="counter_product_pic">
+                                        <img src="./public/img/product.png" alt="">
+                                    </div>
+                                    <div class="counter_product_text-m">
+                                        <p class="product_name">平安燈2-4</p>
+                                    </div>
+                                    <div class="counter_product_text">
+                                        <p class="product_name pn">平安燈2-4</p>
+                                        <div class="d-flex align-items-center justify-content-lg-start justify-content-md-end justify-content-start">
+                                            <div class="product_price">
+                                                <span>$</span>
+                                                <input class="product_price_input" type="number">
+                                            </div>
+                                            <div class="product_num">
+                                                <div class="product_num_btn minus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                                <input class="product_num_input" type="number" value="0">
+                                                <div class="product_num_btn plus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                        <path d="M4.40002 8L4.40002 -4.17233e-07" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="counter_product_item">
+                                    <div class="counter_product_pic">
+                                        <img src="./public/img/product.png" alt="">
+                                    </div>
+                                    <div class="counter_product_text-m">
+                                        <p class="product_name">平安燈2-5</p>
+                                    </div>
+                                    <div class="counter_product_text">
+                                        <p class="product_name pn">平安燈2-5</p>
+                                        <div class="d-flex align-items-center justify-content-lg-start justify-content-md-end justify-content-start">
+                                            <div class="product_price">
+                                                <span>$</span>
+                                                <input class="product_price_input" type="number">
+                                            </div>
+                                            <div class="product_num">
+                                                <div class="product_num_btn minus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                                <input class="product_num_input" type="number" value="0">
+                                                <div class="product_num_btn plus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                        <path d="M4.40002 8L4.40002 -4.17233e-07" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="counter_product_item">
+                                    <div class="counter_product_pic">
+                                        <img src="./public/img/product.png" alt="">
+                                    </div>
+                                    <div class="counter_product_text-m">
+                                        <p class="product_name">平安燈2-6</p>
+                                    </div>
+                                    <div class="counter_product_text">
+                                        <p class="product_name pn">平安燈2-6</p>
+                                        <div class="d-flex align-items-center justify-content-lg-start justify-content-md-end justify-content-start">
+                                            <div class="product_price">
+                                                <span>$</span>
+                                                <input class="product_price_input" type="number">
+                                            </div>
+                                            <div class="product_num">
+                                                <div class="product_num_btn minus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                                <input class="product_num_input" type="number" value="0">
+                                                <div class="product_num_btn plus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                        <path d="M4.40002 8L4.40002 -4.17233e-07" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="name3" role="tabpanel" aria-labelledby="name3-tab">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="counter_product_item">
+                                    <div class="counter_product_pic">
+                                        <img src="./public/img/product.png" alt="">
+                                    </div>
+                                    <div class="counter_product_text-m">
+                                        <p class="product_name">平安燈3-1</p>
+                                    </div>
+                                    <div class="counter_product_text">
+                                        <p class="product_name pn">平安燈3-1</p>
+                                        <div class="d-flex align-items-center justify-content-lg-start justify-content-md-end justify-content-start">
+                                            <div class="product_price">
+                                                <span>$</span>
+                                                <input class="product_price_input" type="number">
+                                            </div>
+                                            <div class="product_num">
+                                                <div class="product_num_btn minus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                                <input class="product_num_input" type="number" value="0">
+                                                <div class="product_num_btn plus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                        <path d="M4.40002 8L4.40002 -4.17233e-07" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="counter_product_item">
+                                    <div class="counter_product_pic">
+                                        <img src="./public/img/product.png" alt="">
+                                    </div>
+                                    <div class="counter_product_text-m">
+                                        <p class="product_name">平安燈3-2</p>
+                                    </div>
+                                    <div class="counter_product_text">
+                                        <p class="product_name pn">平安燈3-2</p>
+                                        <div class="d-flex align-items-center justify-content-lg-start justify-content-md-end justify-content-start">
+                                            <div class="product_price">
+                                                <span>$</span>
+                                                <input class="product_price_input" type="number">
+                                            </div>
+                                            <div class="product_num">
+                                                <div class="product_num_btn minus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                                <input class="product_num_input" type="number" value="0">
+                                                <div class="product_num_btn plus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                        <path d="M4.40002 8L4.40002 -4.17233e-07" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="counter_product_item">
+                                    <div class="counter_product_pic">
+                                        <img src="./public/img/product.png" alt="">
+                                    </div>
+                                    <div class="counter_product_text-m">
+                                        <p class="product_name">平安燈3-3</p>
+                                    </div>
+                                    <div class="counter_product_text">
+                                        <p class="product_name pn">平安燈3-3</p>
+                                        <div class="d-flex align-items-center justify-content-lg-start justify-content-md-end justify-content-start">
+                                            <div class="product_price">
+                                                <span>$</span>
+                                                <input class="product_price_input" type="number">
+                                            </div>
+                                            <div class="product_num">
+                                                <div class="product_num_btn minus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                                <input class="product_num_input" type="number" value="0">
+                                                <div class="product_num_btn plus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                        <path d="M4.40002 8L4.40002 -4.17233e-07" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="counter_product_item">
+                                    <div class="counter_product_pic">
+                                        <img src="./public/img/product.png" alt="">
+                                    </div>
+                                    <div class="counter_product_text-m">
+                                        <p class="product_name">平安燈3-4</p>
+                                    </div>
+                                    <div class="counter_product_text">
+                                        <p class="product_name pn">平安燈3-4</p>
+                                        <div class="d-flex align-items-center justify-content-lg-start justify-content-md-end justify-content-start">
+                                            <div class="product_price">
+                                                <span>$</span>
+                                                <input class="product_price_input" type="number">
+                                            </div>
+                                            <div class="product_num">
+                                                <div class="product_num_btn minus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                                <input class="product_num_input" type="number" value="0">
+                                                <div class="product_num_btn plus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                        <path d="M4.40002 8L4.40002 -4.17233e-07" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="counter_product_item">
+                                    <div class="counter_product_pic">
+                                        <img src="./public/img/product.png" alt="">
+                                    </div>
+                                    <div class="counter_product_text-m">
+                                        <p class="product_name">平安燈3-5</p>
+                                    </div>
+                                    <div class="counter_product_text">
+                                        <p class="product_name pn">平安燈3-5</p>
+                                        <div class="d-flex align-items-center justify-content-lg-start justify-content-md-end justify-content-start">
+                                            <div class="product_price">
+                                                <span>$</span>
+                                                <input class="product_price_input" type="number">
+                                            </div>
+                                            <div class="product_num">
+                                                <div class="product_num_btn minus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                                <input class="product_num_input" type="number" value="0">
+                                                <div class="product_num_btn plus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                        <path d="M4.40002 8L4.40002 -4.17233e-07" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="counter_product_item">
+                                    <div class="counter_product_pic">
+                                        <img src="./public/img/product.png" alt="">
+                                    </div>
+                                    <div class="counter_product_text-m">
+                                        <p class="product_name">平安燈3-6</p>
+                                    </div>
+                                    <div class="counter_product_text">
+                                        <p class="product_name pn">平安燈3-6</p>
+                                        <div class="d-flex align-items-center justify-content-lg-start justify-content-md-end justify-content-start">
+                                            <div class="product_price">
+                                                <span>$</span>
+                                                <input class="product_price_input" type="number">
+                                            </div>
+                                            <div class="product_num">
+                                                <div class="product_num_btn minus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                                <input class="product_num_input" type="number" value="0">
+                                                <div class="product_num_btn plus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                        <path d="M4.40002 8L4.40002 -4.17233e-07" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="name4" role="tabpanel" aria-labelledby="name4-tab">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="counter_product_item">
+                                    <div class="counter_product_pic">
+                                        <img src="./public/img/product.png" alt="">
+                                    </div>
+                                    <div class="counter_product_text-m">
+                                        <p class="product_name">平安燈4-1</p>
+                                    </div>
+                                    <div class="counter_product_text">
+                                        <p class="product_name pn">平安燈4-1</p>
+                                        <div class="d-flex align-items-center justify-content-lg-start justify-content-md-end justify-content-start">
+                                            <div class="product_price">
+                                                <span>$</span>
+                                                <input class="product_price_input" type="number">
+                                            </div>
+                                            <div class="product_num">
+                                                <div class="product_num_btn minus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                                <input class="product_num_input" type="number" value="0">
+                                                <div class="product_num_btn plus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                        <path d="M4.40002 8L4.40002 -4.17233e-07" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="counter_product_item">
+                                    <div class="counter_product_pic">
+                                        <img src="./public/img/product.png" alt="">
+                                    </div>
+                                    <div class="counter_product_text-m">
+                                        <p class="product_name">平安燈4-2</p>
+                                    </div>
+                                    <div class="counter_product_text">
+                                        <p class="product_name pn">平安燈4-2</p>
+                                        <div class="d-flex align-items-center justify-content-lg-start justify-content-md-end justify-content-start">
+                                            <div class="product_price">
+                                                <span>$</span>
+                                                <input class="product_price_input" type="number">
+                                            </div>
+                                            <div class="product_num">
+                                                <div class="product_num_btn minus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                                <input class="product_num_input" type="number" value="0">
+                                                <div class="product_num_btn plus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                        <path d="M4.40002 8L4.40002 -4.17233e-07" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="counter_product_item">
+                                    <div class="counter_product_pic">
+                                        <img src="./public/img/product.png" alt="">
+                                    </div>
+                                    <div class="counter_product_text-m">
+                                        <p class="product_name">平安燈4-3</p>
+                                    </div>
+                                    <div class="counter_product_text">
+                                        <p class="product_name pn">平安燈4-3</p>
+                                        <div class="d-flex align-items-center justify-content-lg-start justify-content-md-end justify-content-start">
+                                            <div class="product_price">
+                                                <span>$</span>
+                                                <input class="product_price_input" type="number">
+                                            </div>
+                                            <div class="product_num">
+                                                <div class="product_num_btn minus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                                <input class="product_num_input" type="number" value="0">
+                                                <div class="product_num_btn plus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                        <path d="M4.40002 8L4.40002 -4.17233e-07" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="counter_product_item">
+                                    <div class="counter_product_pic">
+                                        <img src="./public/img/product.png" alt="">
+                                    </div>
+                                    <div class="counter_product_text-m">
+                                        <p class="product_name">平安燈4-4</p>
+                                    </div>
+                                    <div class="counter_product_text">
+                                        <p class="product_name pn">平安燈4-4</p>
+                                        <div class="d-flex align-items-center justify-content-lg-start justify-content-md-end justify-content-start">
+                                            <div class="product_price">
+                                                <span>$</span>
+                                                <input class="product_price_input" type="number">
+                                            </div>
+                                            <div class="product_num">
+                                                <div class="product_num_btn minus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                                <input class="product_num_input" type="number" value="0">
+                                                <div class="product_num_btn plus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                        <path d="M4.40002 8L4.40002 -4.17233e-07" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="counter_product_item">
+                                    <div class="counter_product_pic">
+                                        <img src="./public/img/product.png" alt="">
+                                    </div>
+                                    <div class="counter_product_text-m">
+                                        <p class="product_name">平安燈4-5</p>
+                                    </div>
+                                    <div class="counter_product_text">
+                                        <p class="product_name pn">平安燈4-5</p>
+                                        <div class="d-flex align-items-center justify-content-lg-start justify-content-md-end justify-content-start">
+                                            <div class="product_price">
+                                                <span>$</span>
+                                                <input class="product_price_input" type="number">
+                                            </div>
+                                            <div class="product_num">
+                                                <div class="product_num_btn minus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                                <input class="product_num_input" type="number" value="0">
+                                                <div class="product_num_btn plus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                        <path d="M4.40002 8L4.40002 -4.17233e-07" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="counter_product_item">
+                                    <div class="counter_product_pic">
+                                        <img src="./public/img/product.png" alt="">
+                                    </div>
+                                    <div class="counter_product_text-m">
+                                        <p class="product_name">平安燈4-6</p>
+                                    </div>
+                                    <div class="counter_product_text">
+                                        <p class="product_name pn">平安燈4-6</p>
+                                        <div class="d-flex align-items-center justify-content-lg-start justify-content-md-end justify-content-start">
+                                            <div class="product_price">
+                                                <span>$</span>
+                                                <input class="product_price_input" type="number">
+                                            </div>
+                                            <div class="product_num">
+                                                <div class="product_num_btn minus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                                <input class="product_num_input" type="number" value="0">
+                                                <div class="product_num_btn plus">
+                                                    <svg width="9" height="8" viewBox="0 0 9 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M0.400024 4H8.40002" stroke="#C1C1C1"/>
+                                                        <path d="M4.40002 8L4.40002 -4.17233e-07" stroke="#C1C1C1"/>
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="counter_product-check d-flex align-items-center justify-content-between">
+                    <div>
+                        <span>小計｜</span>
+                        <span class="counter_product_total">0</span>
+                    </div>
+                    <button class="modal-btn check_btn" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#checkModal">確定</button>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="modal fade counter_modal" id="checkModal" tabindex="-1" aria-labelledby="checkModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="checkModalLabel">確認商品</h5>
+              <button class="modal-close" data-bs-dismiss="modal" aria-label="Close">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13 1L1 13" stroke="#B9B9B9" stroke-linecap="square" stroke-linejoin="round"/>
+                    <path d="M1 1L13 13" stroke="#B9B9B9" stroke-linecap="square" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="check_list">
+                    <div class="check_list_item">
+                        <div class="check_list_name">姓名1</div>
+                        <div class="check_list_content">
+                            <div class="check_list_content_item">
+                                <div class="d-flex align-items-center">
+                                    <img src="./public/img/product.png" alt="">
+                                    <p class="check_list_name">平安燈</p>
+                                </div>
+                                <div>x<span class="check_list_num"></span></div>
+                                <div>S<span class="check_list_price"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="d-md-flex align-items-end justify-content-between">
+            <ul class="footer_list mb-md-0 mb-5">
+                <li>110台北市信義區福德街221巷12號</li>
+                <li>服務電話: 02-2727-9765</li>
+                <li>服務時間: 05:00~21:00 全年無休</li>
+                <li>Email: service@ftg.org.tw</li>
+            </ul>
+            <p class="footer_copyright">松山奉天宮 © 版權所有 All Rights Reserved</p>
+        </div>
+    </footer>
     
+    <script src="./public/js/jquery/jquery.min.js"></script>
+    <script src="./public/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./public/js/counter.js"></script>
 </body>
 </html>
