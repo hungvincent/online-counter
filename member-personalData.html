@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>線上祈福</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./public/css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="./public/css/address/jquery.autocomplete.css">
+    <link rel="stylesheet" href="./public/css/jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" href="./public/css/style.css">
+</head>
+<body>
+    <header class="header header_whiteBg header_small">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a href="./index.html" class="header_logo"><img src="./public/img/logo_color.png" alt=""></a>
+            <div class="d-flex align-items-center">
+                <nav class="header_nav">
+                    <ul class="d-flex align-items-center">
+                        <li><a class="active" href="">線上櫃檯</a></li>
+                        <li><a href="">線上祈福</a></li>
+                        <li><a href="./cart.html" class="header_nav_icon"><img src="./public/img/cart.svg" alt=""></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main main-counter_inner">
+        <div class="counter_inner">
+            <div class="counter_bigTitle">
+                <h1>會員專區</h1>
+            </div>
+            <div class="counterMember d-flex flex-wrap">
+                <nav class="counterMember_nav">
+                    <div class="counterMember_nav_active d-lg-none d-flex align-items-center">
+                        <span>個人資料</span>
+                        <img src="./public/img/chevron-down-red.svg" alt="">
+                    </div>
+                    <ul>
+                        <li><a href="./member-commonData.html">共同資料</a></li>
+                        <li><a href="./member-personalData.html" class="active">個人資料</a></li>
+                        <li><a href="./member-deal.html">交易紀錄</a></li>
+                        <li><a href="./member-changePassword.html">更改密碼</a></li>
+                        <li><a href="">登出</a></li>
+                    </ul>
+                </nav>
+                <div class="counterMember_main counterMember_personal">
+                    <div class="counterMember_personal_head d-flex align-items-center justify-content-between mb-4">
+                        <div class="counterMember_personal_head_member">
+                            <label for="">成員</label>
+                            <select name="" id="" class="select">
+                                <option value="">成員1</option>
+                                <option value="">成員2</option>
+                                <option value="">成員3</option>
+                                <option value="">成員4</option>
+                            </select>
+                        </div>
+                        <a href="./member-add.html" class="counter_btn_borderGray counterMember_personal_head_add">
+                            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.49984 2.83331C8.89104 2.83331 9.20817 3.15044 9.20817 3.54165V13.4583C9.20817 13.8495 8.89104 14.1666 8.49984 14.1666C8.10864 14.1666 7.7915 13.8495 7.7915 13.4583V3.54165C7.7915 3.15044 8.10864 2.83331 8.49984 2.83331Z" fill="white"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.8335 8.50002C2.8335 8.10882 3.15063 7.79169 3.54183 7.79169H13.4585C13.8497 7.79169 14.1668 8.10882 14.1668 8.50002C14.1668 8.89122 13.8497 9.20835 13.4585 9.20835H3.54183C3.15063 9.20835 2.8335 8.89122 2.8335 8.50002Z" fill="white"/>
+                            </svg>
+                            <span>新增資料</span>
+                        </a>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="counter_input">
+                                <label for="">姓名</label>
+                                <input class="input" type="text">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="counter_input">
+                                <label for="">性別</label>
+                                <select name="" id="" class="select">
+                                    <option value="">男</option>
+                                    <option value="">女</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="counter_input">
+                                <label for="">農曆生日</label>
+                                <input type="text" class="input datepickerTW">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="counter_input">
+                                <label for="">國曆生日</label>
+                                <input type="text" class="input datepickerTW">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="counter_input">
+                                <label for="">時辰</label>
+                                <select name="" id="" class="select">
+                                    <option value="">子</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="counter_input">
+                                <label for="">電話</label>
+                                <input type="number" class="input">
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="counter_input">
+                                <label for="">備註</label>
+                                <input type="text" class="input">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between mt-3">
+                        <button class="counter_btn_bgRed">確定</button>
+                        <a href="" class="counterMember_personal_delete">刪除資料</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+    <script src="./public/js/jquery/jquery.min.js"></script>
+    <script src="./public/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./public/js/jquery-ui/jquery-ui.min.js"></script>
+    <script src="./public/js/jquery-ui/roc-datepicker.js"></script>
+    <script src="./public/js/address/json2ext.js"></script>
+    <script src="./public/js/address/jquery.autocomplete.js"></script>
+    <script src="./public/js/address/jquery.twAddrHelper.js"></script>
+    <script src="./public/js/address/tw-city-selector.js"></script>
+    <script src="./public/js/counter.js"></script>
+</body>
+</html>

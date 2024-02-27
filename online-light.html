@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>線上祈福</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./public/css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="./public/css/address/jquery.autocomplete.css">
+    <link rel="stylesheet" href="./public/css/jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" href="./public/css/style.css">
+</head>
+<body>
+    <header class="header header_whiteBg header_small">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a href="./index.html" class="header_logo"><img src="./public/img/logo_color.png" alt=""></a>
+            <div class="d-flex align-items-center">
+                <nav class="header_nav">
+                    <ul class="d-flex align-items-center">
+                        <li><a class="active" href="">線上櫃檯</a></li>
+                        <li><a href="">線上祈福</a></li>
+                        <li><a href="./cart.html" class="header_nav_icon"><img src="./public/img/cart.svg" alt=""></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main main-counter_inner">
+        <div class="counter_inner">
+            <div class="counter_bigTitle">
+                <h1>線上點燈</h1>
+            </div>
+            <div class="counter_inner_scroll">
+                <div>
+                    <div class="counter-title">成員1</div>
+                    <div class="counterLight_member">
+                        <div class="counterLight_member_content">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="counterLight_member_item">
+                                        <div class="d-flex align-items-center counterLight_member_option">
+                                            <input type="checkbox" id="tiangong">
+                                            <label for="tiangong">天公燈</label>
+                                        </div>
+                                        <p class="counterLight_member_price">$2000</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="counterLight_member_item">
+                                        <div class="d-flex align-items-center counterLight_member_option" data-bs-toggle="modal" data-bs-target="#soldoutModal">
+                                            <input type="checkbox" id="pingan">
+                                            <label for="pingan">平安燈</label>
+                                        </div>
+                                        <p class="counterLight_member_price">$2000</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="counterLight_member_item soldout">
+                                        <div class="d-flex align-items-center counterLight_member_option">
+                                            <!-- <input type="checkbox" id="guangming"> -->
+                                            <label for="guangming">光明燈<span>(已售完)</span></label>
+                                        </div>
+                                        <p class="counterLight_member_price">$2000</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="counterLight_member_item">
+                                        <div class="d-flex align-items-center counterLight_member_option">
+                                            <input type="checkbox" id="caishen">
+                                            <label for="caishen">財神燈</label>
+                                        </div>
+                                        <p class="counterLight_member_price">$2000</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="counterLight_member_item">
+                                        <div class="d-flex align-items-center counterLight_member_option">
+                                            <input type="checkbox" id="wengchang">
+                                            <label for="wengchang">文昌燈</label>
+                                        </div>
+                                        <p class="counterLight_member_price">$2000</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="counterLight_member_item">
+                                        <div class="d-flex align-items-center counterLight_member_option">
+                                            <input type="checkbox" id="tiangyi">
+                                            <label for="tiangyi">天醫燈</label>
+                                        </div>
+                                        <p class="counterLight_member_price">$2000</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="counterLight_member_item">
+                                        <div class="d-flex align-items-center counterLight_member_option">
+                                            <input type="checkbox" id="yinyuan">
+                                            <label for="yinyuan">姻緣燈</label>
+                                        </div>
+                                        <p class="counterLight_member_price">$2000</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="counterLight_member_item">
+                                        <div class="d-flex align-items-center counterLight_member_option">
+                                            <input type="checkbox" id="taisui">
+                                            <label for="taisui">太歲燈</label>
+                                        </div>
+                                        <p class="counterLight_member_price">$2000</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="counterLight_member_total">
+                            <p>$1200</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="counter-title">成員2</div>
+                    <div class="counterLight_member">
+                        <div class="counterLight_member_content">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="counterLight_member_item">
+                                        <div class="d-flex align-items-center counterLight_member_option">
+                                            <input type="checkbox" id="tiangong">
+                                            <label for="tiangong">天公燈</label>
+                                        </div>
+                                        <p class="counterLight_member_price">$2000</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="counterLight_member_item">
+                                        <div class="d-flex align-items-center counterLight_member_option">
+                                            <input type="checkbox" id="pingan">
+                                            <label for="pingan">平安燈</label>
+                                        </div>
+                                        <p class="counterLight_member_price">$2000</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="counterLight_member_item soldout">
+                                        <div class="d-flex align-items-center counterLight_member_option">
+                                            <!-- <input type="checkbox" id="guangming"> -->
+                                            <label for="guangming">光明燈<span>(已售完)</span></label>
+                                        </div>
+                                        <p class="counterLight_member_price">$2000</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="counterLight_member_item">
+                                        <div class="d-flex align-items-center counterLight_member_option">
+                                            <input type="checkbox" id="caishen">
+                                            <label for="caishen">財神燈</label>
+                                        </div>
+                                        <p class="counterLight_member_price">$2000</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="counterLight_member_item">
+                                        <div class="d-flex align-items-center counterLight_member_option">
+                                            <input type="checkbox" id="wengchang">
+                                            <label for="wengchang">文昌燈</label>
+                                        </div>
+                                        <p class="counterLight_member_price">$2000</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="counterLight_member_item">
+                                        <div class="d-flex align-items-center counterLight_member_option">
+                                            <input type="checkbox" id="tiangyi">
+                                            <label for="tiangyi">天醫燈</label>
+                                        </div>
+                                        <p class="counterLight_member_price">$2000</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="counterLight_member_item">
+                                        <div class="d-flex align-items-center counterLight_member_option">
+                                            <input type="checkbox" id="yinyuan">
+                                            <label for="yinyuan">姻緣燈</label>
+                                        </div>
+                                        <p class="counterLight_member_price">$2000</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="counterLight_member_item">
+                                        <div class="d-flex align-items-center counterLight_member_option">
+                                            <input type="checkbox" id="taisui">
+                                            <label for="taisui">太歲燈</label>
+                                        </div>
+                                        <p class="counterLight_member_price">$2000</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="counterLight_member_total">
+                            <p>$1200</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="counter_bottom counter_bottom-light d-flex flex-wrap align-items-end justify-content-end">
+                <div class="counter_bottom_total">
+                    <span>小計</span>
+                    <span class="counter_bottom_price">$2400</span>
+                </div>
+                <div class="d-flex align-items-center counter_bottom_btn">
+                    <button class="counter_btn_border me-3">直接購買</button>
+                    <button class="counter_btn_bgWhite">加入購物車</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="modal fade counter_modal" id="soldoutModal" tabindex="-1" aria-labelledby="soldoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header modal-header-send">
+              <h5 class="modal-title" id="soldoutModalLabel">此商品已售完</h5>
+            </div>
+            <div class="modal-body">
+                <img src="./public/img/soldout.svg" alt="">
+                <button class="modal-btn" data-bs-dismiss="modal">確定</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    
+    <script src="./public/js/jquery/jquery.min.js"></script>
+    <script src="./public/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./public/js/jquery-ui/jquery-ui.min.js"></script>
+    <script src="./public/js/jquery-ui/roc-datepicker.js"></script>
+    <script src="./public/js/address/json2ext.js"></script>
+    <script src="./public/js/address/jquery.autocomplete.js"></script>
+    <script src="./public/js/address/jquery.twAddrHelper.js"></script>
+    <script src="./public/js/address/tw-city-selector.js"></script>
+    <script src="./public/js/counter.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>線上祈福</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./public/css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="./public/css/address/jquery.autocomplete.css">
+    <link rel="stylesheet" href="./public/css/jquery-ui/jquery-ui.css">
+    <link rel="stylesheet" href="./public/css/style.css">
+</head>
+<body>
+    <header class="header header_whiteBg header_small">
+        <div class="container d-flex align-items-center justify-content-between">
+            <a href="./index.html" class="header_logo"><img src="./public/img/logo_color.png" alt=""></a>
+            <div class="d-flex align-items-center">
+                <nav class="header_nav">
+                    <ul class="d-flex align-items-center">
+                        <li><a class="active" href="">線上櫃檯</a></li>
+                        <li><a href="">線上祈福</a></li>
+                        <li><a href="" class="header_nav_icon"><img src="./public/img/cart.svg" alt=""></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main main-counter_inner">
+        <div class="counter_inner">
+            <div class="counter_bigTitle">
+                <h1>會員專區</h1>
+            </div>
+            <div class="counterMember d-flex flex-wrap">
+                <nav class="counterMember_nav">
+                    <div class="counterMember_nav_active d-lg-none d-flex align-items-center">
+                        <span>共同資料</span>
+                        <img src="./public/img/chevron-down-red.svg" alt="">
+                    </div>
+                    <ul>
+                        <li><a class="active">共同資料</a></li>
+                        <li><a href="./member-personalData.html">個人資料</a></li>
+                        <li><a href="./member-deal.html">交易紀錄</a></li>
+                        <li><a href="./member-changePassword.html">更改密碼</a></li>
+                        <li><a href="">登出</a></li>
+                    </ul>
+                </nav>
+                <div class="counterMember_main">
+                    <div class="counter_input">
+                        <label for="">信箱</label>
+                        <input class="input" type="email">
+                    </div>
+                    <div class="counter_input counter_address">
+                        <label for="">地址</label>
+                        <div class="d-flex align-items-center justify-content-between flex-wrap" id="dvAddress1">
+                            <input id="code" name="code" class="zipcode input" placeholder="郵遞區號">
+                            <select id="county" name="county" class="county select"></select>
+                            <select id="district" name="district" class="district select"></select>
+                            <input type="text" class="input address">
+                        </div>
+                    </div>
+                    <button class="counter_btn_bgRed mt-5">確定</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+    <script src="./public/js/jquery/jquery.min.js"></script>
+    <script src="./public/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./public/js/jquery-ui/jquery-ui.min.js"></script>
+    <script src="./public/js/jquery-ui/roc-datepicker.js"></script>
+    <script src="./public/js/address/json2ext.js"></script>
+    <script src="./public/js/address/jquery.autocomplete.js"></script>
+    <script src="./public/js/address/jquery.twAddrHelper.js"></script>
+    <script src="./public/js/address/tw-city-selector.js"></script>
+    <script src="./public/js/counter.js"></script>
+</body>
+</html>

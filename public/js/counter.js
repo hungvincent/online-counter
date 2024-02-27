@@ -61,3 +61,34 @@ $(".check_btn").click(function(){
         })
     })
 })
+
+// tw-city-selector.js
+var a = new TwCitySelector({
+    el: "#dvAddress1",
+    // hasZipcode: true,
+    elCounty: "#county", // 在 el 裡查找 dom
+    elDistrict: "#district", // 在 el 裡查找 dom
+    elZipcode: "#code" // 在 el 裡查找 dom
+  });
+
+  // 縣市select跟地址input連動
+// $(document).on("change", ".county", function () {
+//     let county = $(this).val();
+//     $(".cAddress").val(county);
+//   });
+//   $(document).on("change", ".district", function () {
+//     let district = $(this).val();
+//     let county = $(".county").val();
+//     if (!$(".county").val() == "") {
+//       $(".cAddress").val(county + district);
+//     }
+  
+//     let code = $("#code").val();
+//     console.log("code=" + code);
+//     $(".cZip.ac_input").val(code);
+//   });
+  
+//   $(document).on("click",".btn-add-data", function(){
+//     let code = $("#code").val();
+//     console.log("code=" + code);
+//   })
